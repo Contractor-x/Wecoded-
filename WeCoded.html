@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeCoded | DEV Community</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            devBlue: '#4531EA',
+            devGreen: '#CCEA71', 
+            devPurple: '#9D00E5'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .dark-mode {
+      --devBlue: #5D4AFF;
+      --devGreen: #D8FF7D;
+      --devPurple: #B31AFF;
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+  <!-- Header with DEV blue -->
+  <header class="bg-devBlue text-white py-8 text-center">
+    <img src="DEV.icons/dev-dot-to.png" alt="DEV Logo" class="h-20 mx-auto">
+    <h1 class="text-3xl font-bold mt-4">WeCoded</h1>
+    <p class="mt-2">Celebrating underrepresented voices in tech</p>
+  </header>
+
+  <!-- Main content -->
+  <main class="container mx-auto px-4 py-8">
+    <div id="wecoded-articles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Articles will load here -->
+    </div>
+  </main>
+
+  <!-- Footer with DEV purple -->
+  <footer class="bg-devPurple text-white py-8 text-center">
+    <p>Built with ❤️  by Collins using the DEV API</p>
+    <button id="timeline-btn" class="mt-4 px-4 py-2 bg-devGreen text-gray-900 rounded-lg font-medium hover:bg-opacity-90 transition">
+      Explore Women in Tech History
+    </button>
+    <div id="timeline" class="hidden mt-6 max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-left">
+      <h3 class="text-xl font-bold mb-4 text-devPurple dark:text-devGreen">Women in Tech Timeline</h3>
+      <div class="space-y-4">
+        <div class="timeline-item">
+          <h4 class="font-bold">1843</h4>
+          <p>Ada Lovelace writes the first algorithm for Charles Babbage's Analytical Engine</p>
+        </div>
+        <div class="timeline-item">
+          <h4 class="font-bold">1940s</h4>
+          <p>ENIAC programmers (six women) develop software for the first electronic computer</p>
+        </div>
+        <div class="timeline-item">
+          <h4 class="font-bold">1952</h4>
+          <p>Grace Hopper develops the first compiler</p>
+        </div>
+        <div class="timeline-item">
+          <h4 class="font-bold">1969</h4>
+          <p>Margaret Hamilton leads team that develops software for Apollo moon landing</p>
+        </div>
+        <div class="timeline-item">
+          <h4 class="font-bold">1983</h4>
+          <p>Radia Perlman invents the Spanning Tree Protocol (STP)</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Confetti and Tippy libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+        { year: 1943, event: "The ENIAC programmers, six women, program the first all-electronic computer." },
+        { year: 1960, event: "Grace Hopper develops the first compiler for a computer programming language." },
+        { year: 1983, event: "Radia Perlman invents the Spanning Tree Protocol (STP), crucial for network bridges." },
+        { year: 2010, event: "Women hold 25% of computing jobs." },
+        { year: 2021, event: "Women create 50% of tech startups." }
+      ];
+
+      const timelineContainer = document.createElement('div');
+      timelineContainer.className = 'timeline-container my-8';
+      timelineContainer.innerHTML = `
+        <h2 class="text-2xl font-bold text-center mb-4">Timeline of Women in Coding</h2>
+        <ul class="list-disc pl-5">
+          ${timelineData.map(item => `
+            <li class="mb-2">
+              <span class="font-semibold">${item.year}:</span> ${item.event}
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      document.body.appendChild(timelineContainer);
+    }
+
+    // Render articles with DEV colors
+    function renderArticles(articles) {
+      showSuccessNotification();
+      renderTimeline();
+=======
+  <script>
+    // Timeline button functionality
+    document.getElementById('timeline-btn').addEventListener('click', function() {
+      const timeline = document.getElementById('timeline');
+      timeline.classList.toggle('hidden');
+      this.textContent = timeline.classList.contains('hidden') 
+        ? 'Explore Women in Tech History' 
+        : 'Hide Timeline';
+    });
+
+    // Render articles with DEV colors
+    function renderArticles(articles) {
+      showSuccessNotification();
+=======
+    // Interactive timeline of women's coding history
+    function renderTimeline() {
+      const timelineData = [
+        { year: 1843, event: "Ada Lovelace writes the first algorithm for Charles Babbage's Analytical Engine." },
+        { year: 1943, event: "The ENIAC programmers, six women, program the first all-electronic computer." },
+        { year: 1960, event: "Grace Hopper develops the first compiler for a computer programming language." },
+        { year: 1983, event: "Radia Perlman invents the Spanning Tree Protocol (STP), crucial for network bridges." },
+        { year: 2010, event: "Women hold 25% of computing jobs." },
+        { year: 2021, event: "Women create 50% of tech startups." }
+      ];
+
+      const timelineContainer = document.createElement('div');
+      timelineContainer.className = 'timeline-container my-8';
+      timelineContainer.innerHTML = `
+        <h2 class="text-2xl font-bold text-center mb-4">Timeline of Women in Coding</h2>
+        <ul class="list-disc pl-5">
+          ${timelineData.map(item => `
+            <li class="mb-2">
+              <span class="font-semibold">${item.year}:</span> ${item.event}
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      document.body.appendChild(timelineContainer);
+    }
+
+    // Render articles with DEV colors
+    function renderArticles(articles) {
+      showSuccessNotification();
+      renderTimeline();
+
+  <!-- Confetti and Tippy libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css">
+  
+  <!-- Like button styles -->
+  <style>
+    .like-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--devPurple);
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      z-index: 1000;
+    }
+    .like-btn:hover {
+      transform: scale(1.1);
+      background: var(--devBlue);
+    }
+    .like-btn.liked {
+      background: #FF69B4;
+      animation: pulse 0.5s;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+  </style>
+
+  <script>
+    // Women in tech facts for popups
+    const womenInTechFacts = [
+      "Ada Lovelace (1815-1852) wrote the first algorithm intended for a machine - making her the first computer programmer!",
+      "Grace Hopper (1906-1992) invented the first compiler and popularized the term 'debugging' after removing a moth from a computer.",
+      "The ENIAC programmers (1940s) were six women who programmed the first all-electronic computer, but were forgotten for decades.",
+      "Katherine Johnson (1918-2020) calculated trajectories for NASA's early space missions, including Apollo 11's moon landing.",
+      "Radia Perlman (1951-) invented the spanning-tree protocol (STP), crucial for network bridges to operate efficiently."
+    ];
+
+    // Get random fact
+    function getRandomFact() {
+      return womenInTechFacts[Math.floor(Math.random() * womenInTechFacts.length)];
+    }
+
+    // Like button functionality
+    function setupLikeButton() {
+      const likeBtn = document.createElement('button');
+      likeBtn.className = 'like-btn';
+      likeBtn.innerHTML = '❤️';
+      likeBtn.title = 'Support women in tech!';
+      document.body.appendChild(likeBtn);
+
+      likeBtn.addEventListener('click', () => {
+        likeBtn.classList.add('liked');
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#9D00E5', '#CCEA71', '#FF69B4']
+        });
+        
+        setTimeout(() => {
+          alert('Thank you for supporting women in tech!\n\nDid you know? The first computer programmer was Ada Lovelace, a woman!');
+          likeBtn.classList.remove('liked');
+        }, 1000);
+      });
+    }
+
+    // API Configuration
+    const config = {
+      apiUrl: 'https://dev.to/api/articles?tag=wecoded',
+      cacheKey: 'wecoded_cache',
+      cacheDuration: 60 * 60 * 1000 // 1 hour
+    };
+
+    // Load articles with caching
+    async function loadArticles() {
+      try {
+        showLoading();
+        
+        // Check cache first
+        const cached = getCachedArticles();
+        if (cached) {
+          renderArticles(cached);
+          return;
+        }
+
+        // Fetch from API
+        const response = await fetch(config.apiUrl);
+        if (!response.ok) throw new Error('API request failed');
+        
+        const articles = await response.json();
+        cacheArticles(articles);
+        renderArticles(articles);
+        
+      } catch (error) {
+        console.error('Error:', error);
+        showError();
+      }
+    }
+
+    // Cache management
+    function cacheArticles(articles) {
+      const cache = {
+        data: articles,
+        timestamp: Date.now()
+      };
+      localStorage.setItem(config.cacheKey, JSON.stringify(cache));
+    }
+
+    function getCachedArticles() {
+      const cache = JSON.parse(localStorage.getItem(config.cacheKey));
+      if (!cache) return null;
+      
+      // Check cache expiry
+      if (Date.now() - cache.timestamp > config.cacheDuration) {
+        localStorage.removeItem(config.cacheKey);
+        return null;
+      }
+      
+      return cache.data;
+    }
+
+    // Success notification with women in tech stats
+    function showSuccessNotification() {
+      const stats = [
+        "Women created 50% of tech startups in 2021",
+        "Teams with women perform 63% better on innovation metrics",
+        "Women hold 28% of computing jobs today (up from 25% in 2010)",
+        "Companies with women executives outperform others by 15%"
+      ];
+      const randomStat = stats[Math.floor(Math.random() * stats.length)];
+      
+      const notification = document.createElement('div');
+      notification.className = 'fixed bottom-4 left-4 bg-devGreen text-gray-900 px-4 py-2 rounded-lg shadow-lg animate-fade-in';
+      notification.innerHTML = `
+        <p class="font-bold">✨ Women in Tech Fact:</p>
+        <p>${randomStat}</p>
+      `;
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.classList.add('animate-fade-out');
+        setTimeout(() => notification.remove(), 500);
+      }, 5000);
+    }
+
+    // Animation styles for notifications
+    function addNotificationStyles() {
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+          from { opacity: 1; transform: translateY(0); }
+          to { opacity: 0; transform: translateY(20px); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+        .animate-fade-out {
+          animation: fadeOut 0.3s ease-in forwards;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Render articles with DEV colors
+    function renderArticles(articles) {
+      showSuccessNotification();
+      const container = document.getElementById('wecoded-articles');
+      container.innerHTML = articles.slice(0, 6).map(article => `
+        ${(() => {
+          const fact = getRandomFact();
+          return `
+        <article class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow hover:-translate-y-1"
+                 data-tippy-content="${fact}"
+                 data-tippy-animation="scale"
+                 data-tippy-theme="light">
+          <img src="${article.cover_image || 'placeholder.jpg'}" 
+               alt="${article.title}"
+               class="w-full h-48 object-cover">
+          <div class="p-4">
+            ${article.tag_list.map(tag => `
+              <span class="inline-block bg-devGreen text-gray-900 text-xs px-2 py-1 rounded mr-1 mb-1">
+                ${tag}
+              </span>
+            `).join('')}
+            <h3 class="text-xl font-semibold mt-2 dark:text-white">${article.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-1">by ${article.user.name}</p>
+            <a href="${article.url}" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="inline-block mt-3 text-devBlue dark:text-devPurple font-medium">
+              Read Article →
+            </a>
+          </div>
+        </article>
+      `;
+        })()}
+      `).join('');
+    }
+
+    // Loading spinner with women in tech icons
+    function showLoading() {
+      document.getElementById('wecoded-articles').innerHTML = `
+        <div class="col-span-full text-center py-12">
+          <div class="inline-block relative w-20 h-20">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 border-4 border-devBlue border-t-devPurple rounded-full animate-spin"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center text-devPurple text-2xl">
+              👩‍💻
+            </div>
+          </div>
+          <p class="mt-4 text-gray-600 dark:text-gray-300">Loading inspiring content from women in tech...</p>
+        </div>
+      `;
+    }
+
+    // Error handling
+    function showError() {
+      document.getElementById('wecoded-articles').innerHTML = `
+        <div class="col-span-full text-center py-8">
+          <p class="text-red-500">Failed to load articles. Please try again later.</p>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">Remember: Grace Hopper debugged the first computer by removing a moth!</p>
+        </div>
+      `;
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      addNotificationStyles();
+      loadArticles();
+      setupLikeButton();
+      // Initialize tooltips after articles load
+      setTimeout(() => {
+        tippy('[data-tippy-content]', {
+          animation: 'scale',
+          theme: 'light',
+          delay: [100, 50],
+          duration: 200,
+          interactive: true,
+          placement: 'top'
+        });
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
