@@ -74,37 +74,6 @@
     </div>
   </footer>
 
-  <!-- Confetti and Tippy libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
-        { year: 1943, event: "The ENIAC programmers, six women, program the first all-electronic computer." },
-        { year: 1960, event: "Grace Hopper develops the first compiler for a computer programming language." },
-        { year: 1983, event: "Radia Perlman invents the Spanning Tree Protocol (STP), crucial for network bridges." },
-        { year: 2010, event: "Women hold 25% of computing jobs." },
-        { year: 2021, event: "Women create 50% of tech startups." }
-      ];
-
-      const timelineContainer = document.createElement('div');
-      timelineContainer.className = 'timeline-container my-8';
-      timelineContainer.innerHTML = `
-        <h2 class="text-2xl font-bold text-center mb-4">Timeline of Women in Coding</h2>
-        <ul class="list-disc pl-5">
-          ${timelineData.map(item => `
-            <li class="mb-2">
-              <span class="font-semibold">${item.year}:</span> ${item.event}
-            </li>
-          `).join('')}
-        </ul>
-      `;
-      document.body.appendChild(timelineContainer);
-    }
-
-    // Render articles with DEV colors
-    function renderArticles(articles) {
-      showSuccessNotification();
-      renderTimeline();
-=======
   <script>
     // Timeline button functionality
     document.getElementById('timeline-btn').addEventListener('click', function() {
@@ -115,84 +84,6 @@
         : 'Hide Timeline';
     });
 
-    // Render articles with DEV colors
-    function renderArticles(articles) {
-      showSuccessNotification();
-=======
-    // Interactive timeline of women's coding history
-    function renderTimeline() {
-      const timelineData = [
-        { year: 1843, event: "Ada Lovelace writes the first algorithm for Charles Babbage's Analytical Engine." },
-        { year: 1943, event: "The ENIAC programmers, six women, program the first all-electronic computer." },
-        { year: 1960, event: "Grace Hopper develops the first compiler for a computer programming language." },
-        { year: 1983, event: "Radia Perlman invents the Spanning Tree Protocol (STP), crucial for network bridges." },
-        { year: 2010, event: "Women hold 25% of computing jobs." },
-        { year: 2021, event: "Women create 50% of tech startups." }
-      ];
-
-      const timelineContainer = document.createElement('div');
-      timelineContainer.className = 'timeline-container my-8';
-      timelineContainer.innerHTML = `
-        <h2 class="text-2xl font-bold text-center mb-4">Timeline of Women in Coding</h2>
-        <ul class="list-disc pl-5">
-          ${timelineData.map(item => `
-            <li class="mb-2">
-              <span class="font-semibold">${item.year}:</span> ${item.event}
-            </li>
-          `).join('')}
-        </ul>
-      `;
-      document.body.appendChild(timelineContainer);
-    }
-
-    // Render articles with DEV colors
-    function renderArticles(articles) {
-      showSuccessNotification();
-      renderTimeline();
-
-  <!-- Confetti and Tippy libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
-  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css">
-  
-  <!-- Like button styles -->
-  <style>
-    .like-btn {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: var(--devPurple);
-      color: white;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      z-index: 1000;
-    }
-    .like-btn:hover {
-      transform: scale(1.1);
-      background: var(--devBlue);
-    }
-    .like-btn.liked {
-      background: #FF69B4;
-      animation: pulse 0.5s;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-      100% { transform: scale(1); }
-    }
-  </style>
-
-  <script>
     // Women in tech facts for popups
     const womenInTechFacts = [
       "Ada Lovelace (1815-1852) wrote the first algorithm intended for a machine - making her the first computer programmer!",
