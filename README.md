@@ -2,4 +2,4 @@
 
 ---
 
-This is a Proposed website for the 2025 WeCoded website challenge alongside the  
+This is a Proposed website for the 2025 WeCoded website challenge alongside the SheCoded  
