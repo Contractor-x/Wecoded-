@@ -2,4 +2,4 @@
 
 ---
 
-This is a Proposed website for the WeCoded 
+This is a Proposed website for the WeCoded website 
